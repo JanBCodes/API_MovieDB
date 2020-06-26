@@ -20,7 +20,8 @@ header
 {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    margin: 20px 50px ;
+    margin: 20px 25px ;
+
 }
 #logo
 {
@@ -28,14 +29,17 @@ header
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+
 }
-#hamburgerMeanIcon
+#hamburgerMeanIcon /* HB ICON */
 {
-    text-align: left;
-    font-size: 4rem;
-    color:#b3b3b3;
+    display: block;
+    text-align: center;
+    color:yellow;
+    font-size: 6rem ;
+
+
 }
 
 #headerDiv > h1 /* TWH */
@@ -44,46 +48,50 @@ header
     font-size: 3rem;
     color: #D4AF37;
     margin: 15px 0;
+
 }
 
-#headerDiv > span /* HB ICON */
+#hamburgerMeanIcon > span /* Mag Glass */
 {
-    font-size: 2.5rem;
+    font-size: 4rem;
+    display: block;
 }
 
-#headerDiv > span > input /* TWH */
+#hamburgerMeanIcon > span > input /* Search Bar */
 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     color:#b3b3b3 ;
-    border-style: 1px solid purple;
+    border-style: solid;
+    border-radius: 10px;
+    max-width: 350px;
 }
 
 #Menu
 {
-    display: grid;
-    grid-template-rows: 1fr;
-    /*display: none; - REMOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    text-decoration: none;
+    display: none; /* - REMOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 }
 
 li
 {
-    display: inline-block;
     border-radius: 5px;
     border-style: solid;
     border-color: #c5cadb;
     background-color: #375cd4 ;
-    font-size: 3rem;
-    color: #D4AF37;
+    text-decoration: none;
     text-align: center;
-    padding: 10px 0;
-    margin: 5px 0;
-
- 
-
-
+    font-size: 2.5rem;
+    color: #D4AF37;
+    padding: 5px 0;
+    margin: 10px 0;
 }
-
+main
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    color: white;
+}
 
 /*
 -----------------------------------------
