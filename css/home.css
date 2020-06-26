@@ -1,0 +1,119 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;   
+}
+
+body
+{
+    background-image: url(/API_MovieDB/img/emptyTheatherChairs.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+    font-family: 'Noto Serif', serif;
+}
+
+header
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 20px 50px ;
+}
+#logo
+{
+    background-image: url(/API_MovieDB/img/Logo.JPG);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 200px;
+}
+#hamburgerMeanIcon
+{
+    text-align: left;
+    font-size: 4rem;
+    color:#b3b3b3;
+}
+
+#headerDiv > h1 /* TWH */
+{
+    text-align: center;
+    font-size: 3rem;
+    color: #D4AF37;
+    margin: 15px 0;
+}
+
+#headerDiv > span /* HB ICON */
+{
+    font-size: 2.5rem;
+}
+
+#headerDiv > span > input /* TWH */
+{
+    text-align: center;
+    font-size: 3rem;
+    color:#b3b3b3 ;
+    border-style: 1px solid purple;
+}
+
+#Menu
+{
+    display: grid;
+    grid-template-rows: 1fr;
+    /*display: none; - REMOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+}
+
+li
+{
+    display: inline-block;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #c5cadb;
+    background-color: #375cd4 ;
+    font-size: 3rem;
+    color: #D4AF37;
+    text-align: center;
+    padding: 10px 0;
+    margin: 5px 0;
+
+ 
+
+
+}
+
+
+/*
+-----------------------------------------
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    #HamIcon
+    {
+        display: none;
+    } 
+    
+}
+
+/*// Large devices (desktops, less than 1200px)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    #HamIcon{
+        display: none;
+    } 
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    #HamIcon{
+        display: none;
+    } 
+}
+
+
+
+
+
+
+
