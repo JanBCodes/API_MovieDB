@@ -14,15 +14,16 @@ body
     background-size: cover;
     background-color: black;
     font-family: 'Noto Serif', serif;
+    color: white;
 }
-
+/* ------ Header ------ */
 header
 {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     margin: 20px 25px ;
-
 }
+
 #logo
 {
     background-image: url(/API_MovieDB/img/Logo.JPG);
@@ -30,16 +31,6 @@ header
     background-repeat: no-repeat;
     background-size: contain;
     height: 150px;
-
-}
-#hamburgerMeanIcon /* HB ICON */
-{
-    display: block;
-    text-align: center;
-    color:yellow;
-    font-size: 6rem ;
-
-
 }
 
 #headerDiv > h1 /* TWH */
@@ -48,76 +39,104 @@ header
     font-size: 3rem;
     color: #D4AF37;
     margin: 15px 0;
-
 }
 
-#hamburgerMeanIcon > span /* Mag Glass */
-{
-    font-size: 4rem;
-    display: block;
-}
 
-#hamburgerMeanIcon > span > input /* Search Bar */
-{
-    text-align: center;
-    font-size: 4rem;
-    color:#b3b3b3 ;
-    border-style: solid;
-    border-radius: 10px;
-    max-width: 350px;
-}
 
-#Menu
+/* ------ Nav/Menu Bar ------ */
+#menu > li
 {
-    text-decoration: none;
-    display: none; /* - REMOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-}
-
-li
-{
+    border-style: dotted;
+    border-color: gold;
     border-radius: 5px;
-    border-style: solid;
-    border-color: #c5cadb;
-    background-color: #375cd4 ;
-    text-decoration: none;
+    background-color: blue;
+    padding: 10px;
+    margin-left: 25px;
+    margin-bottom: 15px ;
     text-align: center;
-    font-size: 2.5rem;
-    color: #D4AF37;
-    padding: 5px 0;
-    margin: 10px 0;
+    font-size: 1.5rem;
+    list-style-type: none;
+  
 }
-main
+
+/* ------ Main ------ */
+.previous
+{
+    margin: 0 20px;
+    color: dodgerblue;
+}
+.next
+{
+    margin: 0 20px;
+    color: dodgerblue;
+    justify-self: end;
+}
+h2
+{
+    color: gold;
+    margin: 15px 0;
+}
+#voteAvg
+{
+    margin-bottom: 15px;
+}
+p
+{
+   margin: 10px 25px;
+}
+
+#main
 {
     display: grid;
-    grid-template-columns: 1fr;
-    color: white;
+    grid-template-columns: .2fr .8fr;
 }
 
-/*
------------------------------------------
-/* Medium devices (tablets, less than 992px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    
-    #HamIcon
-    {
-        display: none;
-    } 
-    
+#movieMain
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    font-size: 1.5rem;
+    margin: 15px;
 }
 
-/*// Large devices (desktops, less than 1200px)*/
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    #HamIcon{
-        display: none;
-    } 
+.movieContainer
+{
+    border-style: groove;
+    margin: 0 15px 15px 15px;
+    font-size: 1rem;
+    text-align: center;
 }
 
-/* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { 
-    #HamIcon{
-        display: none;
-    } 
+.movieContainer > img
+{
+    justify-self: center;
 }
+
+/* ------ Promotional Items ------ */
+#promotionalDiv
+{
+    border: double;
+    border-color: peru;
+    background-color: indigo;
+    text-align: center;
+    margin: 15px 25px;
+    padding: 50px;
+
+}
+
+/* ------ Footer ------ */
+footer
+{
+    border: double;
+    border-color: peru;
+    background-color: blue;
+    text-align: center;
+    margin: 0px 25px;
+    padding: 15px;
+}
+
+/*    ----------------------------------------- */
 
 
 
