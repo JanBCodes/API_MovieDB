@@ -60,14 +60,14 @@ header
 }
 
 /* ------ Main ------ */
-.previous
+#previous
 {
-    margin: 0 20px;
-    color: dodgerblue;
+    margin: 0 15px;
+    color: dodgerblue;   
 }
-.next
+#next
 {
-    margin: 0 20px;
+    margin: 0 15px;
     color: dodgerblue;
     justify-self: end;
 }
@@ -111,6 +111,12 @@ p
 .movieContainer > img
 {
     justify-self: center;
+    max-width: 500px;;
+}
+
+span
+{
+    text-align: center;
 }
 
 /* ------ Promotional Items ------ */
