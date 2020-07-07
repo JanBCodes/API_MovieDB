@@ -31,6 +31,7 @@ header
     background-repeat: no-repeat;
     background-size: contain;
     height: 150px;
+
 }
 
 #headerDiv > h1 /* TWH */
@@ -39,11 +40,21 @@ header
     font-size: 3rem;
     color: #D4AF37;
     margin: 15px 0;
+
+    
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
 }
 
-
-
 /* ------ Nav/Menu Bar ------ */
+
+#menu
+{
+    display:grid;
+    grid-template-rows: 1fr;
+    /*position: fixed;   */
+
+}
 #menu > li
 {
     border-style: dotted;
@@ -52,12 +63,24 @@ header
     background-color: blue;
     padding: 10px;
     margin-left: 25px;
-    margin-bottom: 15px ;
+    margin-bottom: 25px ;
     text-align: center;
     font-size: 1.5rem;
-    list-style-type: none;
+    list-style-type: none;  
+
+    animation: fadeInLeft; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
   
 }
+/*
+#menu 
+{
+    display: inline-block;
+    margin: 0 0.5rem;
+  
+    animation: bounce; /* referring directly to the animation's @keyfram e declaration 
+    animation-duration: 2s; /* don't forget to set a duration!  
+  }*/
 
 /* ------ Main ------ */
 #previous
@@ -84,40 +107,78 @@ p
 {
    margin: 10px 25px;
 }
+/* ------  ------ */
 
 #main
 {
     display: grid;
-    grid-template-columns: .2fr .8fr;
+    grid-template-columns: 1fr 3fr;
 }
 
-#movieMain
+#movieMainNowPlaying
 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
     font-size: 1.5rem;
     margin: 15px;
 }
-
+/* ------ created in JS ------- */
+/* ------ Now Playing Items ------ */
 .movieContainer
 {
     border-style: groove;
     margin: 0 15px 15px 15px;
     font-size: 1rem;
     text-align: center;
+    border-radius: 20px;
 }
 
 .movieContainer > img
 {
     justify-self: center;
-    max-width: 500px;;
+    max-width: 500px;
+    
 }
 
-span
+/* ------ MovieTrailer Items ------ */
+#movieTrailerDiv
 {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    font-size: 1.5rem;
+    margin: 15px;
+
 }
+
+#movieTrailerVideo
+{
+    padding-top: 25px;
+   text-align: center;
+}
+
+#movieTrailer > img
+{
+    display: block;
+    border-style: ridge;
+    border-radius: 25px;
+
+}
+#movieTrailerInfo
+{
+    margin: 10%;
+    text-align: center;
+
+}
+
+
+/* 
+#movieTrailerVideo
+{
+
+
+} */
+
 
 /* ------ Promotional Items ------ */
 #promotionalDiv
@@ -128,7 +189,6 @@ span
     text-align: center;
     margin: 15px 25px;
     padding: 50px;
-
 }
 
 /* ------ Footer ------ */
