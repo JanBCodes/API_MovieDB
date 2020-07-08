@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;   
+
 }
 
 body
@@ -37,7 +38,7 @@ header
 #headerDiv > h1 /* TWH */
 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 60px;
     color: #D4AF37;
     margin: 15px 0;
 
@@ -52,9 +53,9 @@ header
 {
     display:grid;
     grid-template-rows: 1fr;
-    /*position: fixed;   */
 
 }
+
 #menu > li
 {
     border-style: dotted;
@@ -67,38 +68,73 @@ header
     text-align: center;
     font-size: 1.5rem;
     list-style-type: none;  
-
-    animation: fadeInLeft; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 1s;
-  
 }
-/*
-#menu 
+
+#menuItem1
 {
-    display: inline-block;
-    margin: 0 0.5rem;
-  
-    animation: bounce; /* referring directly to the animation's @keyfram e declaration 
-    animation-duration: 2s; /* don't forget to set a duration!  
-  }*/
+    animation: fadeInLeftBig;
+    animation-duration: 0.5s
+}
+
+#menuItem2
+{
+    animation: fadeInLeftBig;
+    animation-duration: .9s
+}
+
+#menuItem3
+{
+    animation: fadeInLeftBig;
+    animation-duration: 1.3s
+}
+
+#menuItem4
+{
+    animation: fadeInLeftBig;
+    animation-duration: 1.6s
+}
+#menuItem5
+{
+    animation: fadeInLeftBig;
+    animation-duration: 1.9s
+}
 
 /* ------ Main ------ */
+#welcomeContent
+{
+    color: whitesmoke;
+    font-size: 30px;
+    text-align: center;
+}
+
 #previous
 {
-    margin: 0 15px;
+    margin: 0 5px;
     color: dodgerblue;   
+    text-align-last: left;
+}
+#displayCurrentMenuSel
+{
+    margin: 0 5px;
+    color: rgb(90, 255, 30);
+    text-align-last: center;
+
+    animation: flash;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 #next
 {
-    margin: 0 15px;
+    margin: 0 5px;
     color: dodgerblue;
-    justify-self: end;
+    text-align-last: right;
 }
 h2
 {
     color: gold;
     margin: 15px 0;
 }
+
 #voteAvg
 {
     margin-bottom: 15px;
@@ -118,26 +154,39 @@ p
 #movieMainNowPlaying
 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     font-size: 1.5rem;
     margin: 15px;
 }
-/* ------ created in JS ------- */
+
+#movieContainerNav
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 100px;
+}
+
 /* ------ Now Playing Items ------ */
 .movieContainer
 {
-    border-style: groove;
-    margin: 0 15px 15px 15px;
+    display: grid;
+    grid-template-columns: 500px;
+ 
+    margin: 15px 15px;
     font-size: 1rem;
     text-align: center;
+    justify-content: center;
     border-radius: 20px;
+    padding: 0 100px;
+    border-style: groove;
+    background-image: url(/API_MovieDB/img/sideTheatherChairs.jpg)
+
 }
 
 .movieContainer > img
 {
     justify-self: center;
-    max-width: 500px;
-    
+   
 }
 
 /* ------ MovieTrailer Items ------ */
@@ -148,13 +197,12 @@ p
     column-gap: 15px;
     font-size: 1.5rem;
     margin: 15px;
-
 }
 
 #movieTrailerVideo
 {
     padding-top: 25px;
-   text-align: center;
+    text-align: center;
 }
 
 #movieTrailer > img
@@ -168,27 +216,25 @@ p
 {
     margin: 10%;
     text-align: center;
-
 }
-
-
-/* 
-#movieTrailerVideo
-{
-
-
-} */
-
 
 /* ------ Promotional Items ------ */
 #promotionalDiv
 {
     border: double;
-    border-color: peru;
-    background-color: indigo;
+    border-color: greenyellow;
+    background-color: black;
     text-align: center;
     margin: 15px 25px;
     padding: 50px;
+}
+
+#promotionalDiv > p
+{
+    font-size: 30px;
+    animation: flash;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 /* ------ Footer ------ */
@@ -200,6 +246,7 @@ footer
     text-align: center;
     margin: 0px 25px;
     padding: 15px;
+
 }
 
 /*    ----------------------------------------- */
