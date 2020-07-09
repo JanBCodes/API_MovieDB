@@ -38,38 +38,20 @@ header
 #headerDiv > h1 /* TWH */
 {
     text-align: center;
-    font-size: 60px;
+    font-size: 3.5rem;
     color: #D4AF37;
     margin: 15px 0;
-
     
-    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation: bounce;
     animation-duration: 1s;
 }
 
-/* ------ Nav/Menu Bar ------ */
-
+/* ------ Nav/Menu Bar ------  60px;*/ 
 #menu
 {
     display:grid;
     grid-template-rows: 1fr;
-
 }
-
-#menu > li
-{
-    border-style: dotted;
-    border-color: gold;
-    border-radius: 5px;
-    background-color: blue;
-    padding: 10px;
-    margin-left: 25px;
-    margin-bottom: 25px ;
-    text-align: center;
-    font-size: 1.5rem;
-    list-style-type: none;  
-}
-
 #menuItem1
 {
     animation: fadeInLeftBig;
@@ -98,6 +80,21 @@ header
     animation: fadeInLeftBig;
     animation-duration: 1.9s
 }
+
+#menu > li
+{
+    border-style: dotted;
+    border-color: gold;
+    border-radius: 5px;
+    background-color: blue;
+    padding: 10px;
+    margin-left: 25px;
+    margin-bottom: 25px ;
+    text-align: center;
+    font-size: 1.5rem;
+    list-style-type: none;  
+}
+
 
 /* ------ Main ------ */
 #welcomeContent
@@ -171,7 +168,6 @@ p
 {
     display: grid;
     grid-template-columns: 500px;
- 
     margin: 15px 15px;
     font-size: 1rem;
     text-align: center;
@@ -217,25 +213,48 @@ p
     margin: 10%;
     text-align: center;
 }
-
+/* ------ Back to Top Items ------ */
+#backToTop
+{
+    margin: 15px 25px;
+    padding: 50px;
+    text-align: center;
+    color: rgb(90, 255, 30);
+}
 /* ------ Promotional Items ------ */
-#promotionalDiv
+#promotionalSection
 {
     border: double;
     border-color: greenyellow;
     background-color: black;
     text-align: center;
-    margin: 15px 25px;
-    padding: 50px;
+    margin: 15px;
+    padding: 15px;
+
+}
+
+#promotionalDiv
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 350px;
 }
 
 #promotionalDiv > p
 {
-    font-size: 30px;
-    animation: flash;
-    animation-duration: 4s;
+    background-image: url(/API_MovieDB/img/twh.png);
+    background-repeat: center center;
+    background-size: contain;
+
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+
+    animation: jackInTheBox;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
 }
+
 
 /* ------ Footer ------ */
 footer
@@ -249,8 +268,186 @@ footer
 
 }
 
-/*    ----------------------------------------- */
+/* --------------MEDIA QUERIES --------------- */
+/* --------------(max-width: 575.98px) --------------- */
 
+@media (max-width: 575.98px) {
+
+    #promotionalSection
+    {
+        margin: 15px 25px;
+        padding: 20px;
+    }
+    
+
+    header
+    {
+        margin: 20px 15px ;
+    }
+    
+    #headerDiv > h1 /* TWH */
+    {
+        font-size: 2rem;
+        margin: 15px 0;
+
+    }
+    #movieTrailerDiv
+    {
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+
+    .movieContainer > img
+    {
+        width: 450px
+    }
+
+    #body
+    {
+        justify-items: center;
+    }
+    #main
+    {
+        grid-template-columns: 0fr;
+        grid-template-rows: 0fr;
+        justify-content: center;
+    }
+    #navBar
+    {
+        display: grid;
+        grid-template-rows: 1fr;
+
+    }
+    #movieContainerNav
+    {
+        grid-template-columns: 1fr;   
+        grid-template-rows: 1fr;  
+        
+    }
+    #menu > li
+    {
+        margin-left: 0px;
+        margin-bottom: 5px ;
+    }
+    #previous, #displayCurrentMenuSel, #next
+    {
+        text-align-last: center;
+    }
+    .movieContainer
+    {
+        grid-template-columns: 300px;
+    }
+    #welcomeContent
+    {
+        text-align: center;
+    }
+    #promotionalDiv
+    {
+        padding: 25px 0;
+    }
+    footer
+    {
+        padding: 15px;
+    }
+    #menu
+    {
+        margin: 0 15px;
+    }
+}
+
+/* --------------MEDIA QUERIES --------------- */
+/* --------------((min-width: 576px) and (max-width: 991.98px)) --------------- */
+/*  Small devices (landscape phones, 576px and up)----------------------------------------- */
+@media (min-width: 576px) and (max-width: 991.98px) 
+{ 
+            
+    #movieTrailerDiv
+    {
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+
+    .movieContainer > img
+    {
+        width: 450px
+        
+    }
+    #movieTrailer
+    {
+        justify-self: center;
+        
+    }
+    iframe
+    {
+        width: 576;
+    }
+    #body
+    {
+        justify-items: center;
+    }
+    #main
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0fr;
+        justify-content: center;
+    }
+    #navBar
+    {
+        display: grid;
+        grid-template-rows: 1fr;
+
+    }
+    #movieContainerNav
+    {
+        grid-template-columns: 1fr;   
+        grid-template-rows: 1fr;  
+        
+    }
+    #menu > li
+    {
+        margin-left: 0px;
+        margin-bottom: 5px ;
+    }
+    #previous, #displayCurrentMenuSel, #next
+    {
+        text-align-last: center;
+    }
+    .movieContainer
+    {
+        grid-template-columns: 300px;
+    }
+    #welcomeContent
+    {
+        text-align: center;
+    }
+    #promotionalDiv
+    {
+        padding: 25px 0;
+    }
+    footer
+    {
+        padding: 15px;
+    }
+    #menu
+    {
+        margin: 0 15px;
+    }
+    
+}
+
+@media (min-width: 992px){ 
+    
+    .movieContainer
+    {
+        grid-template-columns: 500px;
+        padding: 0 50px;
+    }
+    #displayCurrentMenuSel
+    {
+        grid-template-columns: 500px;
+    }
+    
+}
 
 
 
