@@ -14,7 +14,7 @@ body
     background-attachment: fixed;
     background-size: cover;
     background-color: black;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Permanent Marker', cursive;
     color: white;
 }
 /* ------ Header ------ */
@@ -237,7 +237,7 @@ p
 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 350px;
+    height: 250px;
 }
 
 .promotionalAds
@@ -248,12 +248,8 @@ p
     border-style: ridge;
     border-radius: 10px;
 
-    font-size: 2rem;
-    font-weight: 600;
-    color: black;
-
     animation: jackInTheBox;
-    animation-duration: 5s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
 }
 
@@ -261,12 +257,19 @@ p
 /* ------ Footer ------ */
 footer
 {
+    display: grid;
+    grid-template-columns: .5fr .5fr 2fr;
     border: double;
-    border-color: peru;
     background-color: blue;
     text-align: center;
     margin: 0px 25px;
     padding: 15px;
+
+}
+footer > div, a
+{
+    color: white;
+    font-size: 20px;
 
 }
 
@@ -281,7 +284,6 @@ footer
         padding: 20px;
     }
     
-
     header
     {
         margin: 20px 15px ;
