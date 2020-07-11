@@ -26,15 +26,14 @@ const app = () => {
         const scrollToTop = document.querySelector("#backToTop");
         scrollToTop.addEventListener("click", ()=>{
 
-            backToTop=document.getElementById("#logo") // FIX
-            backToTop.focus({preventScroll:false})
+            document.documentElement.scrollTop = 0
 
-        })
+        });
     
         let width = 400;
     
     //------------------------- Welcome Page 
-        const welcome = () =>
+        const welcome = (a) =>
         {
             navBarMenu.innerHTML=`
             <li id="welcome">Welcome </li>
@@ -42,20 +41,61 @@ const app = () => {
             <li id="menuItem2">Popular</li>
             <li id="menuItem3">Coming Soon</li>
             <li id="menuItem4">Top Rated</li>`
-    
+
             //------------------------- Welcome Page Content
-    
-            movieMainDiv.innerHTML=
-            `<div id="welcomeContent">
-            Welcome to The Weekend Hack Movie Entertainment! 
-            <br> To Navigate Our Wesbite: Just Click on Any of the Movies Lists. 
-            <br>Don't forget to check out our Sponsored Section as well!
-            <br> Click on "Welcome" to bring you back to this page! 
-            </div>`
-    
-            //------------------------------Event Listeners on Welcome Page
+            if(a=="Error")
+            {
+
+                let timerOut=5; 
+                const apiTimeOUt=setInterval(()=>{
+
+                movieMainDiv.innerHTML=
+                `<div id="welcomeContent">
+                    API content has failed to load, please make a new selection. <br> <br>
+                    You will be redirected to the Welcome Page in ${timerOut} seconds
+                </div>`
+
+                    if(timerOut<=0)
+                    {                
+
+                        clearInterval(apiTimeOUt)//stops timer at 0
+
+                    }
+
+                timerOut--;
+        
+                },1000);
+
+                setTimeout(()=>{
+
+                movieMainDiv.innerHTML=
+                `<div id="welcomeContent">
+                Welcome to The Weekend Hack Movie Entertainment! 
+                <br> To Navigate Our Wesbite: Just Click on Any of the Movies Lists. 
+                <br>Don't forget to check out our Sponsored Section as well!
+                <br> Click on "Welcome" to bring you back to this page! 
+                </div>`
+
+                },6000)
+
+            }
+            else
+            {
+                movieMainDiv.innerHTML=
+                `<div id="welcomeContent">
+                Welcome to The Weekend Hack Movie Entertainment! 
+                <br> To Navigate Our Wesbite: Just Click on Any of the Movies Lists. 
+                <br>Don't forget to check out our Sponsored Section as well!
+                <br> Click on "Welcome" to bring you back to this page! 
+                </div>`
+
+            }
     
             //----------------------------- Menu Event Listener
+
+            //---------------------------- Create Search FUnction
+
+            //data.filter(element => element.includes("substring"));
     
             const menuWelcomeHomePage =  document.querySelector("#welcome")
             menuWelcomeHomePage.addEventListener("click", ()=>{
@@ -116,8 +156,7 @@ const app = () => {
                 .then((data) => {
     
                 nowPlayingMoviesArray.push(data)
-                //console.log(nowPlayingMoviesArray)
-               
+                          
                 let movieMainDynamic=
                 `<div id="movieMainNowPlaying">
                     <div id="movieContainerNav" >
@@ -125,9 +164,12 @@ const app = () => {
                         <div id="displayCurrentMenuSel"> Welcome</div>
                         <div id="next"> Next Page</div>
                     </div>`
-    
-                //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
-                for( i= 0; i < data.results.length ; i++)
+
+                //movieDiv.forEach(()=>{ })
+                
+                
+                
+                for( i=0; i < data.results.length ; i++)
                 {
                     movieMainDynamic+=`
                     <div id="${i}" class="movieContainer">
@@ -238,12 +280,14 @@ const app = () => {
     
                 .catch((err)=>{
                     console.log(`Error :${err}`)
-    
+
+                    welcome("Error");
                 });
             })
             .catch((err)=>{
                 console.log(`Error :${err}`)
-    
+                
+                welcome("Error");
             })
     
         }; // end of nowPlaying ()
@@ -396,14 +440,16 @@ const app = () => {
     
                 .catch((err)=>{
                     console.log(`Error :${err}`)
-    
+                    
+                    welcome("Error");
                 })
             
             })//
     
             .catch((err)=>{
                 console.log(`Error :${err}`)
-    
+
+                welcome("Error");    
             })
     
         }; // end of popularMovies ()
@@ -555,14 +601,14 @@ const app = () => {
     
                 .catch((err)=>{
                     console.log(`Error :${err}`)
-    
+                    welcome("Error");
                 });
             
             })//
     
             .catch((err)=>{
                 console.log(`Error :${err}`)
-    
+                welcome("Error");
             });
     
         }; // end of comingSoon ()
@@ -714,15 +760,17 @@ const app = () => {
                     })
     
                 .catch((err)=>{
-                    console.log(`Error :${err}`)
+                    console.log(`Error 1 :${err}`)
+
+                    welcome("Error");
     
                 });
             
             })//
     
             .catch((err)=>{
-                console.log(`Error :${err}`)
-    
+                console.log(`Error 2 :${err}`)
+                welcome("Error");
             })
     
         }; // end of topRated ()
@@ -730,7 +778,9 @@ const app = () => {
     // ---------------- MOVIE DETAILS
     
         const movieTrailer = (movieSelectedObject, pageON) =>{
-    
+            
+            document.documentElement.scrollTop = 0;
+            
             console.log(movieSelectedObject)
             width = 550;
             //let selectedMovieTrailer=""
@@ -841,11 +891,15 @@ const app = () => {
                 }) // end of then
     
                 .catch((err)=>{
-                    console.log(`Error :${err}`)
+                    console.log(`Error 3 :${err}`)
+
+                    welcome("Error");
                 })
     
             .catch((err)=>{
                 console.log(`Error :${err}`)
+
+                welcome("Error");
             })
     
             });

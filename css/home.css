@@ -228,7 +228,7 @@ p
     border-color: greenyellow;
     background-color: black;
     text-align: center;
-    margin: 15px;
+    margin: 10px;
     padding: 15px;
 
 }
@@ -240,11 +240,13 @@ p
     height: 350px;
 }
 
-#promotionalDiv > p
+.promotionalAds
 {
     background-image: url(/API_MovieDB/img/twh.png);
     background-repeat: center center;
     background-size: contain;
+    border-style: ridge;
+    border-radius: 10px;
 
     font-size: 2rem;
     font-weight: 600;
