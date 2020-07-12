@@ -8,21 +8,21 @@
 
 body
 {
-    background-image: url(/API_MovieDB/img/emptyTheatherChairs.jpg);
+    /*background-image: url(/API_MovieDB/img/il_1140xN.1269006603_nl5m.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
     background-color: black;
     font-family: 'Permanent Marker', cursive;
-    color: white;
+    color: #fffe1e;
 }
 /* ------ Header ------ */
 header
 {
     display: grid;
     grid-template-rows: 1fr;
-    margin: 20px 25px ;
+    margin: 20px 30px ;
 }
 
 #logo
@@ -39,7 +39,7 @@ header
 {
     text-align: center;
     font-size: 3.5rem;
-    color: #D4AF37;
+    color: #fffe1e;
     margin: 15px 0;
     
     animation: bounce;
@@ -51,6 +51,7 @@ header
 {
     display:grid;
     grid-template-rows: 1fr;
+    color:gold;
 }
 #menuItem1
 {
@@ -84,11 +85,11 @@ header
 #menu > li
 {
     border-style: dotted;
-    border-color: gold;
+    border-color: #ffff1e;
     border-radius: 5px;
-    background-color: blue;
+    background-color: dodgerblue;
     padding: 10px;
-    margin-left: 25px;
+    margin-left: 45px;
     margin-bottom: 25px ;
     text-align: center;
     font-size: 1.5rem;
@@ -113,7 +114,7 @@ header
 #displayCurrentMenuSel
 {
     margin: 0 5px;
-    color: rgb(90, 255, 30);
+    color: #fffe1e;
     text-align-last: center;
 
     animation: flash;
@@ -128,7 +129,7 @@ header
 }
 h2
 {
-    color: gold;
+    color: #8e1eff;
     margin: 15px 0;
 }
 
@@ -139,6 +140,7 @@ h2
 p
 {
    margin: 10px 25px;
+   color: #8fff1e;
 }
 /* ------  ------ */
 
@@ -173,15 +175,25 @@ p
     text-align: center;
     justify-content: center;
     border-radius: 20px;
-    padding: 0 100px;
+    border-color: #ffff1e;
     border-style: groove;
-    background-image: url(/API_MovieDB/img/sideTheatherChairs.jpg)
+    padding: 0 15px;
+
+    background-image: url(/API_MovieDB/img/blue\ strip.jpg);
+    background-repeat: repeat-y;
+
+    background-size: contain;
+
+    
+    font-family: 'Merienda One', cursive;;
+    color: whitesmoke;
 
 }
 
 .movieContainer > img
 {
     justify-self: center;
+    border-radius: 15px;
    
 }
 
@@ -205,6 +217,7 @@ p
 {
     display: block;
     border-style: ridge;
+    border-color: #ffff1e ;
     border-radius: 25px;
 
 }
@@ -219,16 +232,20 @@ p
     margin: 15px 25px;
     padding: 50px;
     text-align: center;
-    color: rgb(90, 255, 30);
+    color: #ffff1e;
+
+    animation: flash;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 /* ------ Promotional Items ------ */
 #promotionalSection
 {
     border: double;
-    border-color: greenyellow;
-    background-color: black;
+    border-color: #ffff1e;
+    background-image: url(/API_MovieDB/img/spotlight.jpg);
     text-align: center;
-    margin: 10px;
+    margin: 10px 25px;
     padding: 15px;
 
 }
@@ -236,21 +253,26 @@ p
 #promotionalDiv
 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
     height: 250px;
+
 }
 
 .promotionalAds
 {
     background-image: url(/API_MovieDB/img/twh.png);
     background-repeat: center center;
-    background-size: contain;
+    background-size: cover;
     border-style: ridge;
+    border-color: #1e8fff;
     border-radius: 10px;
 
     animation: jackInTheBox;
-    animation-duration: 15s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
+
+    opacity: 100;
 }
 
 
@@ -260,7 +282,8 @@ footer
     display: grid;
     grid-template-columns: .5fr .5fr 2fr;
     border: double;
-    background-color: blue;
+    border-color: #fffe1e ;
+    background-color: black;
     text-align: center;
     margin: 0px 25px;
     padding: 15px;
@@ -291,6 +314,8 @@ footer > div, a
     
     #headerDiv > h1 /* TWH */
     {
+        
+        display: inline-block;
         font-size: 2rem;
         margin: 15px 0;
 
@@ -303,7 +328,7 @@ footer > div, a
 
     .movieContainer > img
     {
-        width: 450px
+        width: 700px
     }
 
     #body
