@@ -8,12 +8,12 @@
 
 body
 {
-    /*background-image: url(/API_MovieDB/img/il_1140xN.1269006603_nl5m.jpg);
+    background-image: url(/API_MovieDB/img/curtain01.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; */
-    background-color: black;
+    background-size: cover;
+    background-color:black;
     font-family: 'Permanent Marker', cursive;
     color: #fffe1e;
 }
@@ -161,15 +161,16 @@ p
 #movieContainerNav
 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 0 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0 50px;
+    text-align: center;
 }
 
 /* ------ Now Playing Items ------ */
 .movieContainer
 {
     display: grid;
-    grid-template-columns: 500px;
+    grid-template-columns: 1fr;
     margin: 15px 15px;
     font-size: 1rem;
     text-align: center;
@@ -179,15 +180,17 @@ p
     border-style: groove;
     padding: 0 15px;
 
-    background-image: url(/API_MovieDB/img/blue\ strip.jpg);
-    background-repeat: repeat-y;
-
-    background-size: contain;
-
+    background-image: url(/API_MovieDB/img/retro-dark-cinema-theater-hall-260nw-184141193.jpg);
+    background-position: center;
+    background-attachment: fixed;;
     
+    
+            
     font-family: 'Merienda One', cursive;;
     color: whitesmoke;
 
+    animation: fadeInLeftBig;
+    animation-duration: .5s;
 }
 
 .movieContainer > img
@@ -226,6 +229,47 @@ p
     margin: 10%;
     text-align: center;
 }
+
+#modalContainer
+{
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: grey;
+    z-index: 4;
+
+}
+
+#modalContainer > div > iframe
+{
+    width: 800px ;
+    height: 470px
+
+}
+button
+{
+    padding: 15px ;
+    display: block;
+    right: 0;
+    top: 0;
+    position: fixed;
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+
+
+
 /* ------ Back to Top Items ------ */
 #backToTop
 {
@@ -263,16 +307,16 @@ p
 {
     background-image: url(/API_MovieDB/img/twh.png);
     background-repeat: center center;
-    background-size: cover;
+    object-fit: cover;
     border-style: ridge;
     border-color: #1e8fff;
     border-radius: 10px;
 
-    animation: jackInTheBox;
-    animation-duration: 5s;
+    animation: fadeIn;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
 
-    opacity: 100;
+    
 }
 
 
@@ -328,7 +372,7 @@ footer > div, a
 
     .movieContainer > img
     {
-        width: 700px
+        width: 300px
     }
 
     #body

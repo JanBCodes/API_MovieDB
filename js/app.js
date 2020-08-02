@@ -37,25 +37,27 @@ const app = () => {
             let width = 400;
         
         //------------------------- Welcome Page 
-            const welcome = (a) =>
+            const welcome = (Message) =>
             {
-                navBarMenu.innerHTML=`
-                <li id="welcome">Welcome </li>
+
+
+                navBarMenu.innerHTML=
+                `<li id="welcome">Welcome </li>
                 <li id="menuItem1">Now Playing</li>
                 <li id="menuItem2">Popular</li>
                 <li id="menuItem3">Coming Soon</li>
                 <li id="menuItem4">Top Rated</li>`
 
                 //------------------------- Welcome Page Content
-                if(a=="Error")
+                if(Message=="Error")
                 {
-
                     let timerOut=5; 
+
                     const apiTimeOUt=setInterval(()=>{
 
                     movieMainDiv.innerHTML=
                     `<div id="welcomeContent">
-                        API content has failed to load, please make a new selection. <br> <br>
+                        Movie content has failed to load, please make a new selection. <br> <br>
                         You will be redirected to the Welcome Page in ${timerOut} seconds
                     </div>`
 
@@ -135,6 +137,13 @@ const app = () => {
                     endPointPage=1;
                     topRated();
                 });
+
+                document.documentElement.scrollTop = 0;
+
+                endPointPage = 1;
+                endPointPagePopular = 1;
+                endPointPageComing = 1;
+                endPointPageTopRated = 1;
         
             }
             welcome();
@@ -160,13 +169,17 @@ const app = () => {
                     .then((data) => {
         
                     nowPlayingMoviesArray.push(data)
-                            
+                    
+                    const totalPages=data.total_pages
+
                     let movieMainDynamic=
                     `<div id="movieMainNowPlaying">
                         <div id="movieContainerNav" >
+                            <div id="firstPage"> 1 </div>
                             <div id="previous"> Previous Page </div>
                             <div id="displayCurrentMenuSel"> Welcome</div>
                             <div id="next"> Next Page</div>
+                            <div id="lastPage"> ${totalPages} </div>
                         </div>`
 
                     //movieDiv.forEach(()=>{ })
@@ -206,7 +219,7 @@ const app = () => {
                     });
                     
                     const displayCurrentMenuSel =  document.querySelector("#displayCurrentMenuSel")
-                    displayCurrentMenuSel.innerHTML = 'Now Playing';
+                    displayCurrentMenuSel.innerHTML = `Now Playing <br>(Page: ${endPointPage})`;
         
                     const nextPage = document.querySelector("#next");
                     nextPage.addEventListener("click",()=>{
@@ -284,13 +297,13 @@ const app = () => {
                     .catch((err)=>{
                         console.log(`Error :${err}`)
 
-                        welcome("Error");
+                        welcome("Error")
                     });
                 })
                 .catch((err)=>{
                     console.log(`Error :${err}`)
                     
-                    welcome("Error");
+                    welcome("Error")
                 })
         
             }; // end of nowPlaying ()
@@ -319,12 +332,16 @@ const app = () => {
                         popularMoviesArray.push(data)
                         //console.log(moviesArray)
                     
+                        const totalPages=data.total_pages
+
                         let movieMainDynamic=
                         `<div id="movieMainNowPlaying">
                             <div id="movieContainerNav" >
+                                <div id="firstPage"> 1 </div>
                                 <div id="previous"> Previous Page </div>
                                 <div id="displayCurrentMenuSel"> Welcome</div>
                                 <div id="next"> Next Page</div>
+                                <div id="lastPage"> ${totalPages} </div>
                             </div>`
         
                         //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
@@ -363,7 +380,7 @@ const app = () => {
                         });
         
                         const displayCurrentMenuSel =  document.querySelector("#displayCurrentMenuSel")
-                        displayCurrentMenuSel.innerHTML = 'Popular Movies';
+                        displayCurrentMenuSel.innerHTML = `Popular Movies <br>(Page: ${endPointPage})`;
                                     
                         const nextPage = document.querySelector("#next");
                         nextPage.addEventListener("click",()=>{
@@ -480,12 +497,16 @@ const app = () => {
                         comingSoonMoviesArray.push(data)
                         //console.log(moviesArray)
                     
+                        const totalPages=data.total_pages
+
                         let movieMainDynamic=
                         `<div id="movieMainNowPlaying">
                             <div id="movieContainerNav" >
+                                <div id="firstPage"> 1 </div>
                                 <div id="previous"> Previous Page </div>
                                 <div id="displayCurrentMenuSel"> Welcome</div>
                                 <div id="next"> Next Page</div>
+                                <div id="lastPage"> ${totalPages} </div>
                             </div>`
         
                         //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
@@ -524,7 +545,7 @@ const app = () => {
                         });
         
                         const displayCurrentMenuSel =  document.querySelector("#displayCurrentMenuSel")
-                        displayCurrentMenuSel.innerHTML = 'Coming Soon';
+                        displayCurrentMenuSel.innerHTML = `Coming Soon <br>(Page: ${endPointPageComing})`;
                                     
                         const nextPage = document.querySelector("#next");
                         nextPage.addEventListener("click",()=>{
@@ -555,10 +576,12 @@ const app = () => {
                                 let movieDivSelectedID = elementParent.id;
                                 let movieSelectedObject = comingSoonMoviesArray[0].results[movieDivSelectedID]
         
+                                //console.log(movieSelectedObject)
+
                                 removeChild(movieMainNowPlaying)
                                 movieTrailer(movieSelectedObject, 'comingSoonrMoviePage');    
                                 comingSoonMoviesArray=[] 
-                                        
+                                       
                             } // end of IF
         
                         }); // end of Event Listener movieMainNowPlaying 
@@ -637,14 +660,18 @@ const app = () => {
                     .then((data) => {
         
                         topRatedMoviesArray.push(data)
-                        //console.log(moviesArray)
+                        //console.log(topRatedMoviesArray)
                     
+                        const totalPages=data.total_pages
+
                         let movieMainDynamic=
                         `<div id="movieMainNowPlaying">
                             <div id="movieContainerNav" >
+                                <div id="firstPage"> 1 </div>
                                 <div id="previous"> Previous Page </div>
                                 <div id="displayCurrentMenuSel"> Welcome</div>
                                 <div id="next"> Next Page</div>
+                                <div id="lastPage"> ${totalPages} </div>
                             </div>`
         
                         //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
@@ -679,11 +706,11 @@ const app = () => {
                             }
         
                             topRatedMoviesArray=[];
-                            comingSoon();
+                            topRated();
                         });
         
                         const displayCurrentMenuSel =  document.querySelector("#displayCurrentMenuSel")
-                        displayCurrentMenuSel.innerHTML = 'Top Rated ';
+                        displayCurrentMenuSel.innerHTML = `Top Rated <br>(Page: ${endPointPageTopRated})`;
                                     
                         const nextPage = document.querySelector("#next");
                         nextPage.addEventListener("click",()=>{
@@ -698,7 +725,7 @@ const app = () => {
                             }      
         
                             topRatedMoviesArray=[];
-                            comingSoon();
+                            topRated();
                         
                         });
         
@@ -794,8 +821,10 @@ const app = () => {
                 <li id="menuItem4">Coming Soon</li>
                 <li id="menuItem5">Top Rated</li>`
         
-                const movieTrailerEndPoint= `https://api.themoviedb.org/3/movie/${movieSelectedObject.id}/videos?api_key=1b562e1d6f5dd3a38fcbe32f5c01f875&language=en-US `
-        
+                const movieTrailerEndPoint = `https://api.themoviedb.org/3/movie/${movieSelectedObject.id}/videos?api_key=1b562e1d6f5dd3a38fcbe32f5c01f875&language=en-US`
+                
+                //console.log(movieTrailerEndPoint)
+           
                 fetch(movieTrailerEndPoint) 
         
                 .then((response) => {
@@ -805,10 +834,37 @@ const app = () => {
                     .then((movieTrailer)=>{
         
                         let selectedMovieTrailer= movieTrailer.results[0].key
-        
+
+             /*          console.log(selectedMovieTrailer)
+                        console.log(movieTrailerEndPoint)
+
+                        if(movieTrailerEndPoint==`undefined`)
+                        {
+                            welcome ("Error")
+    
+                        }
+                        else if (movieSelectedObject.id==`undefined`)
+                        {
+                            welcome ("Error")
+                        }
+                */    
                         movieMainDiv.innerHTML =`
                         <div id="movieTrailerDiv">
                             <div id="movieTrailerVideo">
+                            <div id="modalContainer">
+                                <div>
+                                    <button>
+                                        X
+                                    </button>
+                                    <iframe 
+                                    src="https://www.youtube.com/embed/${selectedMovieTrailer}" 
+                                    frameborder="0" allow="accelerometer; autoplay; 
+                                    encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
                                 <iframe width="560" height="315" 
                                     src="https://www.youtube.com/embed/${selectedMovieTrailer}" 
                                     frameborder="0" allow="accelerometer; autoplay; 
@@ -827,81 +883,88 @@ const app = () => {
                             </div>
                         </div>`
 
-        
-                    //------------Event Listeners on Movie Trailer Page
-                    const backtoPreviousPage =  document.querySelector("#menuItem1")
-                    backtoPreviousPage.addEventListener("click", ()=>{
+                    
+                        //------------Event Listeners on Movie Trailer Page
+                        const exitTrailerModalButton =  document.querySelector("button")
+                        exitTrailerModalButton.addEventListener("click", ()=>{
+                            
+                            const modalContainer =  document.querySelector("#modalContainer")
+                            modalContainer.remove()
+                            
+                        });
+
+                        const backtoPreviousPage =  document.querySelector("#menuItem1")
+                        backtoPreviousPage.addEventListener("click", ()=>{
+                
+                            removeChild(movieTrailerDiv)
             
-                        removeChild(movieTrailerDiv)
+                            if(pageON == 'nowPlayingPage')
+                            {
+                                nowPlaying();
+                            }
+                            else if(pageON == 'popularMoviePage')
+                            {
+                                popularMovies();
+                            }
+                            else if(pageON == 'comingSoonrMoviePage')
+                            {
+                                comingSoon();
+                            }
+                            else if(pageON == 'topRatedMoviePlayingPage')
+                            {
+                                topRated();
+                            }
+                            else if(pageON == 'welcomePage')
+                            {
+                                welcome();
+                            };
+            
+                        });
         
-                        if(pageON == 'nowPlayingPage')
-                        {
-                            nowPlaying();
-                        }
-                        else if(pageON == 'popularMoviePage')
-                        {
+                        const menuWelcomeHomePage =  document.querySelector("#welcome")
+                        menuWelcomeHomePage.addEventListener("click", ()=>{
+                            welcome()
+                        });
+            
+                        const menuNowPlayingHomePage =  document.querySelector("#menuItem2")
+                        menuNowPlayingHomePage.addEventListener("click", ()=>{
+            
+                            nowPlaying()
+                        });
+            
+                        const popularMoviesClicked = document.querySelector("#menuItem3");
+                        popularMoviesClicked.addEventListener("click",()=>{
+                    
+
                             popularMovies();
-                        }
-                        else if(pageON == 'comingSoonrMoviePage')
-                        {
+                        });
+            
+                        const comingSoonClicked = document.querySelector("#menuItem4");
+                        comingSoonClicked.addEventListener("click",()=>{
+            
+
                             comingSoon();
-                        }
-                        else if(pageON == 'topRatedMoviePlayingPage')
-                        {
+                        });
+            
+                        const topRatedClicked = document.querySelector("#menuItem5");
+                        topRatedClicked.addEventListener("click",()=>{
+                    
+
                             topRated();
-                        }
-                        else if(pageON == 'welcomePage')
-                        {
-                            welcome();
-                        };
-        
-                    });
-        
-                    const menuWelcomeHomePage =  document.querySelector("#welcome")
-                    menuWelcomeHomePage.addEventListener("click", ()=>{
-                        welcome()
-                    });
-        
-                    const menuNowPlayingHomePage =  document.querySelector("#menuItem2")
-                    menuNowPlayingHomePage.addEventListener("click", ()=>{
-        
-                        endPointPage=1;
-                        nowPlaying()
-                    });
-        
-                    const popularMoviesClicked = document.querySelector("#menuItem3");
-                    popularMoviesClicked.addEventListener("click",()=>{
-                
-                        endPointPage=1;
-                        popularMovies();
-                    });
-        
-                    const comingSoonClicked = document.querySelector("#menuItem4");
-                    comingSoonClicked.addEventListener("click",()=>{
-        
-                        endPointPage=1;
-                        comingSoon();
-                    });
-        
-                    const topRatedClicked = document.querySelector("#menuItem5");
-                    topRatedClicked.addEventListener("click",()=>{
-                
-                        endPointPage=1;
-                        topRated();
-                    });
+                        });
         
                     }) // end of then
         
                     .catch((err)=>{
-                        console.log(`Error 3 :${err}`)
+                        console.log(`Error:${err}`)
 
-                        welcome("Error");
+                        welcome("Error")
                     })
         
                 .catch((err)=>{
                     console.log(`Error :${err}`)
 
-                    welcome("Error");
+                    welcome("Error")
                 })
         
                 });
