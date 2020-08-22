@@ -129,7 +129,7 @@ header
 }
 h2
 {
-    color: #8e1eff;
+    color: dodgerblue;
     margin: 15px 0;
 }
 
@@ -140,20 +140,21 @@ h2
 p
 {
    margin: 10px 25px;
-   color: #8fff1e;
+   color: yellow;
+
 }
 /* ------  ------ */
 
 #main
 {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
 }
 
 #movieMainNowPlaying
 {
     display: grid;
-    grid-template-columns: 1fr;
+
     font-size: 1.5rem;
     margin: 15px;
 }
@@ -162,7 +163,7 @@ p
 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    padding: 0 50px;
+    padding: 0 15px;
     text-align: center;
 }
 
@@ -171,8 +172,8 @@ p
 {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 15px 15px;
-    font-size: 1rem;
+    margin: 15px 0px;
+    font-size: 1.5rem;
     text-align: center;
     justify-content: center;
     border-radius: 20px;
@@ -180,12 +181,12 @@ p
     border-style: groove;
     padding: 0 15px;
 
-    background-image: url(/API_MovieDB/img/retro-dark-cinema-theater-hall-260nw-184141193.jpg);
-    background-position: center;
-    background-attachment: fixed;;
-    
-    
-            
+    background-image: url(/API_MovieDB/img/IVbqMR.jpg); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+     
     font-family: 'Merienda One', cursive;;
     color: whitesmoke;
 
@@ -245,8 +246,8 @@ p
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    background-color: grey;
-    z-index: 4;
+    background-color: silver;
+    z-index: 10;
 
 }
 
@@ -345,6 +346,16 @@ footer > div, a
 
 @media (max-width: 575.98px) {
 
+    #modalContainer > div > iframe
+    {
+        width: 320px ;
+
+    }
+    iframe
+    {
+        width: 320px ;
+    }
+
     #promotionalSection
     {
         margin: 15px 25px;
@@ -433,7 +444,11 @@ footer > div, a
 /*  Small devices (landscape phones, 576px and up)----------------------------------------- */
 @media (min-width: 576px) and (max-width: 991.98px) 
 { 
-            
+    #modalContainer > div > iframe
+    {
+        width: 500px ;
+
+    }        
     #movieTrailerDiv
     {
         grid-template-columns: 1fr;
@@ -507,7 +522,7 @@ footer > div, a
     }
     
 }
-
+/*---------------------------*/
 @media (min-width: 992px){ 
     
     .movieContainer
@@ -519,7 +534,11 @@ footer > div, a
     {
         grid-template-columns: 500px;
     }
-    
+    #modalContainer > div > iframe
+    {
+        width: 1200px ;
+
+    }
 }
 
 

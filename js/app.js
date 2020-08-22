@@ -789,7 +789,7 @@ const app = () => {
                         })
         
                     .catch((err)=>{
-                        console.log(`Error 1 :${err}`)
+                        console.log(`:${err}`)
 
                         welcome("Error");
         
