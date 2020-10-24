@@ -39,8 +39,6 @@ const app = () => {
         //------------------------- Welcome Page 
             const welcome = (Message) =>
             {
-
-
                 navBarMenu.innerHTML=
                 `<li id="welcome">Welcome </li>
                 <li id="menuItem1">Now Playing</li>
@@ -185,20 +183,20 @@ const app = () => {
                     //movieDiv.forEach(()=>{ })
                     
                     //console.log(nowPlayingMoviesArray)
-                    for( i=0; i < data.results.length ; i++)
-                    {
-                        movieMainDynamic+=`
-                        <div id="${i}" class="movieContainer">
-                            <h2 id="h2"> ${data.results[i].title} </h2>
-                            <h3 id="voteAvg"> Vote Average: ${data.results[i].vote_average} </h3>
-                            <img src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" width="${width}px"> 
-                            <p> ${data.results[i].overview} </p>
-                            <p> Release Date: ${data.results[i].release_date} </p>
-                        </div>`
+                        for(let i=0; i < data.results.length ; i++)
+                        {
+                            movieMainDynamic+=`
+                            <div id="${i}" class="movieContainer">
+                                <h2 id="h2"> ${data.results[i].title} </h2>
+                                <h3 id="voteAvg"> Vote Average: ${data.results[i].vote_average} </h3>
+                                <img src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" width="${width}px"> 
+                                <p> ${data.results[i].overview} </p>
+                                <p> Release Date: ${data.results[i].release_date} </p>
+                            </div>`
 
-                        movieMainDiv.innerHTML = movieMainDynamic
-                        
-                    }//end of FOR loop
+                            movieMainDiv.innerHTML = movieMainDynamic
+                            
+                        }//end of FOR loop
                     `</div>`//
         
                     //------------Event Listeners on Now Playing Page
@@ -345,7 +343,7 @@ const app = () => {
                             </div>`
         
                         //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
-                        for( i= 0; i < data.results.length ; i++)
+                        for(let i= 0; i < data.results.length ; i++)
                         {
                             movieMainDynamic+=`
                             <div id="${i}" class="movieContainer">
@@ -510,7 +508,7 @@ const app = () => {
                             </div>`
         
                         //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
-                        for(i= 0; i < data.results.length ; i++)
+                        for(let i= 0; i < data.results.length ; i++)
                         {
                             movieMainDynamic+=`
                             <div id="${i}" class="movieContainer">
@@ -675,7 +673,7 @@ const app = () => {
                             </div>`
         
                         //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
-                        for( i= 0; i < data.results.length ; i++)
+                        for(let i= 0; i < data.results.length ; i++)
                         {
                             movieMainDynamic+=`
                             <div id="${i}" class="movieContainer">

@@ -8,7 +8,7 @@
 
 body
 {
-    background-image: url(/API_MovieDB/img/curtain01.jpg);
+    background-image: url(../img/curtain01.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -27,7 +27,7 @@ header
 
 #logo
 {
-    background-image: url(/API_MovieDB/img/Logo.JPG);
+    background-image: url(../img/Logo.JPG);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -181,7 +181,7 @@ p
     border-style: groove;
     padding: 0 15px;
 
-    background-image: url(/API_MovieDB/img/IVbqMR.jpg); 
+    background-image: url(../img/IVbqMR.jpg); 
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -194,7 +194,7 @@ p
     animation-duration: .5s;
 }
 
-.movieContainer > img
+.movieContainer > /API_MovieDB/img
 {
     justify-self: center;
     border-radius: 15px;
@@ -288,7 +288,7 @@ button
 {
     border: double;
     border-color: #ffff1e;
-    background-image: url(/API_MovieDB/img/spotlight.jpg);
+    background-image: url(../img/spotlight.jpg);
     text-align: center;
     margin: 10px 25px;
     padding: 15px;
@@ -306,7 +306,7 @@ button
 
 .promotionalAds
 {
-    background-image: url(/API_MovieDB/img/twh.png);
+    background-image: url(../img/twh.png);
     background-repeat: center center;
     object-fit: cover;
     border-style: ridge;
