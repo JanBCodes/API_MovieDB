@@ -59,7 +59,7 @@ const app = () => {
                         You will be redirected to the Welcome Page in ${timerOut} seconds
                     </div>`
 
-                        if(timerOut<=0)
+                        if(timerOut <= 0 )
                         {                
 
                             clearInterval(apiTimeOUt)//stops timer at 0
@@ -74,10 +74,10 @@ const app = () => {
 
                     movieMainDiv.innerHTML=
                     `<div id="welcomeContent">
-                    Welcome to The Weekend Hack Movie Entertainment! 
+                    Welcome to The Movie Entertainment Ltd! 
                     <br> To Navigate Our Wesbite: Just Click on Any of the Movies Lists. 
-                    <br>Don't forget to check out our Sponsored Section as well!
-                    <br> Click on "Welcome" to bring you back to this page! 
+                    <br>Check out our Sponsors as well!
+                    <br> but if you get lost Click on "Welcome" to bring you back to this page! 
                     </div>`
 
                     },6000)
@@ -87,10 +87,10 @@ const app = () => {
                 {
                     movieMainDiv.innerHTML=
                     `<div id="welcomeContent">
-                    Welcome to The Weekend Hack Movie Entertainment! 
+                    Welcome to The Movie Entertainment Ltd! 
                     <br> To Navigate Our Wesbite: Just Click on Any of the Movies Lists. 
-                    <br>Don't forget to check out our Sponsored Section as well!
-                    <br> Click on "Welcome" to bring you back to this page! 
+                    <br>Check out our Sponsors as well!
+                    <br> but if you get lost Click on "Welcome" to bring you back to this page! 
                     </div>`
 
                 }
@@ -125,14 +125,14 @@ const app = () => {
                 const menuComingSoonMovies =  document.querySelector("#menuItem3")
                 menuComingSoonMovies.addEventListener("click", ()=>{
         
-                    endPointPage=1;
+                    endPointPage = 1;
                     comingSoon();
                 });  
         
                 const menuTopRatedMovies =  document.querySelector("#menuItem4")
                 menuTopRatedMovies.addEventListener("click", ()=>{
         
-                    endPointPage=1;
+                    endPointPage = 1;
                     topRated();
                 });
 
@@ -168,7 +168,7 @@ const app = () => {
         
                     nowPlayingMoviesArray.push(data)
                     
-                    const totalPages=data.total_pages
+                    const totalPages = data.total_pages
 
                     let movieMainDynamic=
                     `<div id="movieMainNowPlaying">
@@ -185,7 +185,7 @@ const app = () => {
                     //console.log(nowPlayingMoviesArray)
                         for(let i=0; i < data.results.length ; i++)
                         {
-                            movieMainDynamic+=`
+                            movieMainDynamic +=`
                             <div id="${i}" class="movieContainer">
                                 <h2 id="h2"> ${data.results[i].title} </h2>
                                 <h3 id="voteAvg"> Vote Average: ${data.results[i].vote_average} </h3>
@@ -342,21 +342,21 @@ const app = () => {
                                 <div id="lastPage"> ${totalPages} </div>
                             </div>`
         
-                        //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
-                        for(let i= 0; i < data.results.length ; i++)
-                        {
-                            movieMainDynamic+=`
-                            <div id="${i}" class="movieContainer">
-                                <h2 id="h2"> ${data.results[i].title} </h2>
-                                <h3 id="voteAvg"> Vote Average: ${data.results[i].vote_average} </h3>
-                                <img src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" width="${width}px"> 
-                                <p> ${data.results[i].overview} </p>
-                                <p> Release Date: ${data.results[i].release_date} </p>
-                            </div>`
-                            
-                            movieMainDiv.innerHTML = movieMainDynamic
-                            
-                        }//end of FOR loop
+                            //movieDiv.forEach((i)=>{}) - can use Array ES6 feature
+                            for(let i= 0; i < data.results.length ; i++)
+                            {
+                                movieMainDynamic+=`
+                                    <div id="${i}" class="movieContainer">
+                                        <h2 id="h2"> ${data.results[i].title} </h2>
+                                        <h3 id="voteAvg"> Vote Average: ${data.results[i].vote_average} </h3>
+                                        <img src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" width="${width}px"> 
+                                        <p> ${data.results[i].overview} </p>
+                                        <p> Release Date: ${data.results[i].release_date} </p>
+                                    </div>`
+                                
+                                    movieMainDiv.innerHTML = movieMainDynamic
+                                
+                            }//end of FOR loop
                         `</div>`//
         
                         //------------Event Listeners on Popular Movies Page
@@ -982,7 +982,31 @@ const app = () => {
 
 
         // ----------------
+
+        const floatMenu = {
+
+            controlFloatingMenu()
+            {
+                let lastMenuItem = document.querySelector("#menuItem4").getBoundingClientRect().bottom
+                let headerRow = document.querySelector("hr").getBoundingClientRect().bottom
+                let menuBar = document.querySelector("#menu")
+
+                console.log(`${lastMenuItem} & ${headerRow}`)
+                if (lastMenuItem < headerRow)
+                {
+                    
+
+                }
+
+            }
     
+        }
+
+        floatMenu.controlFloatingMenu()
+
+
+        // ---------------- 
+
         }; // end of main ()
         main()
     }); // end of DOM Content Loaded
@@ -990,4 +1014,10 @@ const app = () => {
 }; // end of app()
 app();
     
+
+
+
+
+
+
     

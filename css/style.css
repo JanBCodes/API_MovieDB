@@ -1,21 +1,30 @@
+:root /* VARIABLES*/
+{
+    --all-text: #21209c;
+    
+}
+
 *
 {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;   
 
 }
 
 body
 {
-    background-image: url(../img/curtain01.jpg);
-    background-position: center center;
+
+    max-width: 1440px;
+    margin: auto;
+    /* background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
-    background-color:black;
-    font-family: 'Permanent Marker', cursive;
-    color: #fffe1e;
+    background-size: cover; */
+    background-color:#FFFFFF;
+    font-family: 'Averia Serif Libre', cursive;
+    color: var(--all-text);
+
 }
 /* ------ Header ------ */
 header
@@ -32,14 +41,13 @@ header
     background-repeat: no-repeat;
     background-size: contain;
     height: 150px;
-
 }
 
-#headerDiv > h1 /* TWH */
+#headerDiv > h1 
 {
     text-align: center;
-    font-size: 3.5rem;
-    color: #fffe1e;
+    font-size: 5rem;
+    color: #23120b;
     margin: 15px 0;
     
     animation: bounce;
@@ -51,43 +59,51 @@ header
 {
     display:grid;
     grid-template-rows: 1fr;
-    color:gold;
+    color: var(--all-text);
 }
-#menuItem1
+
+#menu > li:hover
+{
+    color: #fdb827;
+    background-color: var(--all-text);
+}
+
+#menuItem1, #menuItem2, #menuItem3, #menuItem4, #menuItem5
 {
     animation: fadeInLeftBig;
+}
+
+#menuItem1
+{
     animation-duration: 0.5s
 }
 
 #menuItem2
 {
-    animation: fadeInLeftBig;
     animation-duration: .9s
 }
 
 #menuItem3
 {
-    animation: fadeInLeftBig;
     animation-duration: 1.3s
 }
 
 #menuItem4
 {
-    animation: fadeInLeftBig;
     animation-duration: 1.6s
 }
+
 #menuItem5
 {
-    animation: fadeInLeftBig;
     animation-duration: 1.9s
 }
 
 #menu > li
 {
-    border-style: dotted;
-    border-color: #ffff1e;
+    border-style: solid;
+    border-color: #23120b;
     border-radius: 5px;
-    background-color: dodgerblue;
+    background-color: #fdb827;
     padding: 10px;
     margin-left: 45px;
     margin-bottom: 25px ;
@@ -100,36 +116,45 @@ header
 /* ------ Main ------ */
 #welcomeContent
 {
-    color: whitesmoke;
-    font-size: 30px;
-    text-align: center;
+    color: var(--all-text);
+    font-size: 2rem;
+    padding: 50px 75px;
+    text-align: justify;
 }
 
 #previous
 {
     margin: 0 5px;
-    color: dodgerblue;   
+    color: var(--all-text);
     text-align-last: left;
 }
+
+#previous:hover, #next:hover
+{
+    color: #fdb827;
+}
+
 #displayCurrentMenuSel
 {
     margin: 0 5px;
-    color: #fffe1e;
+    color: var(--all-text);
     text-align-last: center;
-
+    color: #fdb827;
     animation: flash;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
 }
+
 #next
 {
     margin: 0 5px;
-    color: dodgerblue;
+    color: var(--all-text);
     text-align-last: right;
 }
+
 h2
 {
-    color: dodgerblue;
+    color: var(--all-text);
     margin: 15px 0;
 }
 
@@ -137,10 +162,11 @@ h2
 {
     margin-bottom: 15px;
 }
+
 p
 {
    margin: 10px 25px;
-   color: yellow;
+   color: var(--all-text);
 
 }
 /* ------  ------ */
@@ -154,7 +180,7 @@ p
 #movieMainNowPlaying
 {
     display: grid;
-
+    grid-template-columns: 1fr;
     font-size: 1.5rem;
     margin: 15px;
 }
@@ -165,36 +191,34 @@ p
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 0 15px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 /* ------ Now Playing Items ------ */
 .movieContainer
 {
-    display: grid;
-    grid-template-columns: 1fr;
     margin: 15px 0px;
     font-size: 1.5rem;
     text-align: center;
-    justify-content: center;
     border-radius: 20px;
-    border-color: #ffff1e;
-    border-style: groove;
+    border-color: #fdb827;
+    border-style: inset;
     padding: 0 15px;
+    margin: 0 100px;
+    margin-bottom: 10px;
 
-    background-image: url(../img/IVbqMR.jpg); 
-    background-position: center center;
+    /* background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
      
-    font-family: 'Merienda One', cursive;;
-    color: whitesmoke;
+    color: #21209c;
 
     animation: fadeInLeftBig;
     animation-duration: .5s;
 }
 
-.movieContainer > /API_MovieDB/img
+.movieContainer > img
 {
     justify-self: center;
     border-radius: 15px;
@@ -208,12 +232,11 @@ p
     grid-template-columns: 1fr 1fr;
     column-gap: 15px;
     font-size: 1.5rem;
-    margin: 15px;
+    margin:  0 15px;
 }
 
 #movieTrailerVideo
 {
-    padding-top: 25px;
     text-align: center;
 }
 
@@ -221,10 +244,11 @@ p
 {
     display: block;
     border-style: ridge;
-    border-color: #ffff1e ;
+    border-color: #21209c ;
     border-radius: 25px;
 
 }
+
 #movieTrailerInfo
 {
     margin: 10%;
@@ -246,7 +270,7 @@ p
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
-    background-color: silver;
+    background-color: #000;
     z-index: 10;
 
 }
@@ -255,8 +279,8 @@ p
 {
     width: 800px ;
     height: 470px
-
 }
+
 button
 {
     padding: 15px ;
@@ -266,6 +290,8 @@ button
     position: fixed;
     border-radius: 10px;
     font-size: 20px;
+    background-color: #000 ;
+    color: #fdb827;
 
 }
 
@@ -274,50 +300,65 @@ button
 /* ------ Back to Top Items ------ */
 #backToTop
 {
-    margin: 15px 25px;
-    padding: 50px;
+    margin: 15px 50px;
     text-align: center;
-    color: #ffff1e;
-
+    color: #fdb827;
     animation: flash;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
 }
+
+#backToTop:hover
+{
+    color: var(--all-text);
+}
+
 /* ------ Promotional Items ------ */
 #promotionalSection
 {
-    border: double;
-    border-color: #ffff1e;
-    background-image: url(../img/spotlight.jpg);
     text-align: center;
     margin: 10px 25px;
     padding: 15px;
-
 }
 
 #promotionalDiv
 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 15px;
     height: 250px;
-
 }
 
 .promotionalAds
 {
-    background-image: url(../img/twh.png);
-    background-repeat: center center;
-    object-fit: cover;
+    background-image: url(../img/sponsor\ by.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-style: ridge;
-    border-color: #1e8fff;
+    border-color: #23120b;
     border-radius: 10px;
-
     animation: fadeIn;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+}
 
-    
+#promo1
+{
+    animation-duration: 1s;
+}
+
+#promo2
+{
+    animation-duration: 3s;
+}
+
+#promo3
+{
+    animation-duration: 5s;
+}
+
+#promo4
+{
+    animation-duration: 7s;
 }
 
 
@@ -327,9 +368,9 @@ footer
     display: grid;
     grid-template-columns: .5fr .5fr 2fr;
     border: double;
-    border-color: #fffe1e ;
+    border-color: #23120b ;
     background-color: black;
-    text-align: center;
+    text-align: right;
     margin: 0px 25px;
     padding: 15px;
 
@@ -346,16 +387,6 @@ footer > div, a
 
 @media (max-width: 575.98px) {
 
-    #modalContainer > div > iframe
-    {
-        width: 320px ;
-
-    }
-    iframe
-    {
-        width: 320px ;
-    }
-
     #promotionalSection
     {
         margin: 15px 25px;
@@ -369,75 +400,87 @@ footer > div, a
     
     #headerDiv > h1 /* TWH */
     {
-        
         display: inline-block;
         font-size: 2rem;
         margin: 15px 0;
-
     }
+
     #movieTrailerDiv
     {
         grid-template-columns: 1fr;
         row-gap: 15px;
     }
 
-    .movieContainer > img
-    {
-        width: 300px
-    }
-
-    #body
-    {
-        justify-items: center;
-    }
     #main
     {
-        grid-template-columns: 0fr;
-        grid-template-rows: 0fr;
-        justify-content: center;
+        grid-template-columns: 1fr;
     }
+
     #navBar
     {
         display: grid;
         grid-template-rows: 1fr;
+        max-width: 320px;
+    }
 
-    }
-    #movieContainerNav
-    {
-        grid-template-columns: 1fr;   
-        grid-template-rows: 1fr;  
-        
-    }
-    #menu > li
-    {
-        margin-left: 0px;
-        margin-bottom: 5px ;
-    }
-    #previous, #displayCurrentMenuSel, #next
-    {
-        text-align-last: center;
-    }
-    .movieContainer
-    {
-        grid-template-columns: 300px;
-    }
     #welcomeContent
     {
+        font-size: 1rem;
         text-align: center;
-    }
-    #promotionalDiv
-    {
-        padding: 25px 0;
-    }
-    footer
-    {
-        padding: 15px;
     }
     #menu
     {
         margin: 0 15px;
     }
-}
+
+    #menu > li
+    {
+        margin-left: 0px;
+        margin-bottom: 5px ;
+    }
+
+    #movieContainerNav
+    {
+        grid-template-rows: 1fr;
+        width: 300px;
+        font-size: 1rem;
+    }
+
+    .movieContainer > img
+    {
+        max-width: 250px
+    }
+
+    .movieContainer
+    {
+        grid-template-columns: 1fr;
+        margin: 0 0;
+        padding: 0 0;
+        font-size: 1rem;
+
+    }
+
+    #previous, #displayCurrentMenuSel, #next
+    {
+        text-align-last: center;
+    }  
+
+    #promotionalDiv
+    {
+        padding: 5px 0;
+        height: 50px;
+        grid-column-gap: 5px;
+    }
+
+    footer
+    {
+        padding: 15px;
+    }
+
+    #modalContainer > div > iframe
+    {
+        max-height: 100%;
+    }
 
 /* --------------MEDIA QUERIES --------------- */
 /* --------------((min-width: 576px) and (max-width: 991.98px)) --------------- */
@@ -504,10 +547,10 @@ footer > div, a
     {
         grid-template-columns: 300px;
     }
-    #welcomeContent
+    /* #welcomeContent
     {
         text-align: center;
-    }
+    } */
     #promotionalDiv
     {
         padding: 25px 0;
