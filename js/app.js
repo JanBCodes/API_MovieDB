@@ -411,7 +411,7 @@ const app = () => {
         
                                 removeChild(movieMainNowPlaying)
                                 movieTrailer(movieSelectedObject, 'popularMoviePage');  
-                                popularMoviesArray=[]   
+                                popularMoviesArray=[];
                                         
                             }; // end of IF
         
@@ -851,9 +851,7 @@ const app = () => {
                             <div id="movieTrailerVideo">
                             <div id="modalContainer">
                                 <div>
-                                    <button>
-                                        X
-                                    </button>
+                                    <button> X </button>
                                     <iframe 
                                     src="https://www.youtube.com/embed/${selectedMovieTrailer}" 
                                     frameborder="0" allow="accelerometer; autoplay; 
@@ -863,7 +861,7 @@ const app = () => {
 
                                 </div>
                             </div>
-                                <iframe width="560" height="315" 
+                                <iframe width="500" height="300"
                                     src="https://www.youtube.com/embed/${selectedMovieTrailer}" 
                                     frameborder="0" allow="accelerometer; autoplay; 
                                     encrypted-media; gyroscope; picture-in-picture"
@@ -982,28 +980,6 @@ const app = () => {
 
 
         // ----------------
-
-        const floatMenu = {
-
-            controlFloatingMenu()
-            {
-                let lastMenuItem = document.querySelector("#menuItem4").getBoundingClientRect().bottom
-                let headerRow = document.querySelector("hr").getBoundingClientRect().bottom
-                let menuBar = document.querySelector("#menu")
-
-                console.log(`${lastMenuItem} & ${headerRow}`)
-                if (lastMenuItem < headerRow)
-                {
-                    
-
-                }
-
-            }
-    
-        }
-
-        floatMenu.controlFloatingMenu()
-
 
         // ---------------- 
 

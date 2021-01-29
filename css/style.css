@@ -277,8 +277,8 @@ p
 
 #modalContainer > div > iframe
 {
-    width: 800px ;
-    height: 470px
+    width: 1200;
+    height: 470;
 }
 
 button
@@ -331,10 +331,9 @@ button
 
 .promotionalAds
 {
-    background-image: url(../img/sponsor\ by.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     border-style: ridge;
     border-color: #23120b;
     border-radius: 10px;
@@ -344,23 +343,32 @@ button
 #promo1
 {
     animation-duration: 1s;
+    background-image: url(../img/sponsor\ by.png);
+
 }
 
 #promo2
 {
     animation-duration: 3s;
+
 }
 
 #promo3
 {
     animation-duration: 5s;
-}
+    background-image: url(../img/sponsor\ by.png);
+}   
 
 #promo4
 {
     animation-duration: 7s;
 }
 
+#promo4, #promo2
+{
+    background-image: url(../img/tmdbLogo.JPG);
+
+}
 
 /* ------ Footer ------ */
 footer
@@ -375,10 +383,11 @@ footer
     padding: 15px;
 
 }
+
 footer > div, a
 {
     color: white;
-    font-size: 20px;
+    font-size: 1.5rem;
 
 }
 
@@ -386,7 +395,6 @@ footer > div, a
 /* --------------(max-width: 575.98px) --------------- */
 
 @media (max-width: 575.98px) {
-
     #promotionalSection
     {
         margin: 15px 25px;
@@ -395,7 +403,9 @@ footer > div, a
     
     header
     {
-        margin: 20px 15px ;
+        margin: 20px auto;
+        max-width: 320px;
+
     }
     
     #headerDiv > h1 /* TWH */
@@ -403,6 +413,7 @@ footer > div, a
         display: inline-block;
         font-size: 2rem;
         margin: 15px 0;
+        max-width: 320px;
     }
 
     #movieTrailerDiv
@@ -414,14 +425,16 @@ footer > div, a
     #main
     {
         grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 20px auto;
     }
 
-    #navBar
+    /* #navBar
     {
-        display: grid;
-        grid-template-rows: 1fr;
         max-width: 320px;
-    }
+        margin: 0 auto;
+
+    } */
 
     #welcomeContent
     {
@@ -436,28 +449,34 @@ footer > div, a
     #menu > li
     {
         margin-left: 0px;
-        margin-bottom: 5px ;
+        margin-bottom: 5px;
     }
 
     #movieContainerNav
     {
         grid-template-rows: 1fr;
-        width: 300px;
         font-size: 1rem;
     }
 
     .movieContainer > img
     {
-        max-width: 250px
+        width: 280px;
+        margin: 0 auto;
     }
 
+    #movieMainNowPlaying
+    {
+        width: 300px;
+
+    }
     .movieContainer
     {
         grid-template-columns: 1fr;
         margin: 0 0;
         padding: 0 0;
         font-size: 1rem;
-
+        margin-bottom: 10px;
+        
     }
 
     #previous, #displayCurrentMenuSel, #next
@@ -474,15 +493,61 @@ footer > div, a
 
     footer
     {
-        padding: 15px;
+        padding: 15px auto;
     }
 
-    #modalContainer > div > iframe
+    footer > div
     {
-        max-height: 100%;
+        font-size: 1rem;
+
     }
 
-/* --------------MEDIA QUERIES --------------- */
+
+    #modalContainer
+    {
+        position: absolute;
+    }
+
+    button
+    {
+        position: absolute;
+    }
+
+    #movieTrailerVideo > iframe
+    {
+        width: 320px;
+    }
+
+    #movieTrailerInfo
+    {
+        font-size: 1rem;
+        margin: 0 auto;
+
+    }
+
+    #movieMain
+    {
+        max-width: 320px;
+        margin: 10px auto;
+        justify-self: center;
+
+    }
+
+    #movieTrailer > img
+    {
+        max-width: 320px;
+        align-self: center;
+    }
+
+    #movieTrailer
+    {
+        justify-self: center;
+
+    }
+
+}
+
+                /* --------------MEDIA QUERIES --------------- */
 /* --------------((min-width: 576px) and (max-width: 991.98px)) --------------- */
 /*  Small devices (landscape phones, 576px and up)----------------------------------------- */
 @media (min-width: 576px) and (max-width: 991.98px) 
@@ -528,17 +593,20 @@ footer > div, a
         grid-template-rows: 1fr;
 
     }
+
     #movieContainerNav
     {
         grid-template-columns: 1fr;   
         grid-template-rows: 1fr;  
         
     }
+
     #menu > li
     {
         margin-left: 0px;
         margin-bottom: 5px ;
     }
+
     #previous, #displayCurrentMenuSel, #next
     {
         text-align-last: center;
